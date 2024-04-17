@@ -49,3 +49,4 @@
 
 mne
 scikit-learn
+click
