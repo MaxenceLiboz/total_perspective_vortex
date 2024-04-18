@@ -32,9 +32,9 @@ def cross_validation(X, Y, pipeline):
 	return scores
 
 
-def create_epochs(raw, event_id, tmin = -1.0, tmax = 4.0):
+def create_epochs(raw, tmin = 1.0, tmax = 4.0):
 	# Get the events
-	events, _ = events_from_annotations(raw, event_id=dict(T1=2, T2=3))
+	events, event_id = events_from_annotations(raw)
 	
 	# Define the picks
 	picks = pick_types(raw.info, meg=False, eeg=True, stim=False, eog=False, exclude="bads")
@@ -65,13 +65,13 @@ def preprocess_data(raws):
 	raws.set_montage(montage)
 
 	# Apply a filter to go from 8 to 32 Hz
-	raws.filter(8, 30, fir_design="firwin", skip_by_annotation="edge")
+	raws.filter(8, 32, fir_design="firwin", skip_by_annotation="edge")
 
 	return raws
 
 
 def fetch_data(subject, runs):
-	raw_fnames = eegbci.load_data(subject, runs)
+	raw_fnames = eegbci.load_data(subject, runs, './datasets')
 	raws = concatenate_raws([read_raw_edf(f, preload=True) for f in raw_fnames])
 	return raws
 
