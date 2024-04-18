@@ -1,13 +1,14 @@
 
 import click
-from run_enum import Run
-from pipeline import fetch_data, preprocess_data, create_epochs, cross_validation
-from sklearn.pipeline import make_pipeline
-from mne.decoding import CSP
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
 import numpy as np
+from pipeline import fetch_data, preprocess_data, create_epochs, cross_validation
+from mne.decoding import CSP
 from mne import set_log_level
+from sklearn.pipeline import make_pipeline
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
 from sklearn.model_selection import train_test_split
+
+from run_enum import Run
 
 @click.group()
 def main_commands():
