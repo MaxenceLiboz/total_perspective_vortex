@@ -8,8 +8,20 @@ class Run(Enum):
     MOTOR_IMAGERY_LEFT_RIGHT = [3, 4, 7, 8, 11, 12]
     MOTOR_IMAGERY_HANDS_FEET = [5, 6, 9, 10, 13, 14]
 
+
     def get_by_index(index):
-        return list(Run)[index - 1].value
+        try:
+            return list(Run)[index - 1]
+        except:
+            raise Exception(f'Index {index} not found in Run enum')
     
+
     def get_all():
-        return [run.value for run in Run]
+        return [run for run in Run]
+    
+
+    def __str__():
+        str = ""
+        for index, run in enumerate(Run):
+            str += f'{index + 1}: {run.name} '
+        return str

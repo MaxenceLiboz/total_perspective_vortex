@@ -1,52 +1,29 @@
-# # requirements for full MNE-Python functionality (other than raw/epochs export)
-# numpy>=1.15.4
-# scipy>=1.1.0,!=1.11.0.dev0
-# matplotlib
-# tqdm
-# pooch>=1.5
-# decorator
-# h5io
-# packaging
-# pymatreader
-# PyQt6!=6.6.1,!=6.6.2
-# PyQt6-Qt6!=6.6.1,!=6.6.2
-# pyobjc-framework-Cocoa>=5.2.0; platform_system=="Darwin"
-# sip
-# scikit-learn
-# nibabel
-# numba
-# h5py
-# jinja2
-# pandas
-# numexpr
-# jupyter
-# python-picard
-# statsmodels
-# joblib
-# psutil
-# dipy
-# vtk
-# nilearn
-# xlrd
-# imageio>=2.6.1
-# imageio-ffmpeg>=0.4.1
-# traitlets
-# pyvista>=0.32,!=0.35.2,!=0.38.0,!=0.38.1,!=0.38.2,!=0.38.3,!=0.38.4,!=0.38.5,!=0.38.6
-# pyvistaqt>=0.4
-# mffpy>=0.5.7
-# ipywidgets
-# ipyvtklink
-
-# # mne-nirs specific requirements
-# mne
-# h5io
-# lxml
-# patsy
-# tables
-# typing_extensions
-# seaborn
-
-
-mne
-scikit-learn
-click
+certifi==2024.2.2
+charset-normalizer==3.3.2
+click==8.1.7
+contourpy==1.2.1
+cycler==0.12.1
+decorator==5.1.1
+fonttools==4.51.0
+idna==3.7
+Jinja2==3.1.3
+joblib==1.4.0
+kiwisolver==1.4.5
+lazy_loader==0.4
+MarkupSafe==2.1.5
+matplotlib==3.8.4
+mne==1.6.1
+numpy==1.26.4
+packaging==24.0
+pillow==10.3.0
+platformdirs==4.2.0
+pooch==1.8.1
+pyparsing==3.1.2
+python-dateutil==2.9.0.post0
+requests==2.31.0
+scikit-learn==1.4.2
+scipy==1.13.0
+six==1.16.0
+threadpoolctl==3.4.0
+tqdm==4.66.2
+urllib3==2.2.1

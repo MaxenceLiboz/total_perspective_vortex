@@ -1,4 +1,3 @@
-.venv/
-test.py
-datasets/
+.project-env/
+datasets/MNE-eegbci-data/
 __pycache__/
