@@ -1,3 +1,4 @@
 .project-env/
 datasets/MNE-eegbci-data/
 __pycache__/
+models/subject*

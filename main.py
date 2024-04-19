@@ -2,16 +2,15 @@
 import click
 import joblib
 import numpy as np
-from pipeline import fetch_data, preprocess_data, create_epochs
-from mne.decoding import CSP
+from utils import fetch_data, preprocess_data, create_epochs
+from my_csp import CSP
+# from mne.decoding import CSP
 from mne import set_log_level
 from sklearn.pipeline import make_pipeline
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import ShuffleSplit, cross_val_score, KFold
-
+from sklearn.model_selection import cross_val_score, KFold
+from time import sleep
 from run_enum import Run
 
 @click.group(invoke_without_command=True)
@@ -66,12 +65,11 @@ def train(subject, run, all_subject, all_runs, plot, no_cross_validation):
 
             print(f'Fitting the pipeline')
             pipeline.fit(X_train, y_train)
-            
 
             with open(f'./models/subject_{subject}_run_{run.name}.joblib', 'wb') as f:
                 joblib.dump(pipeline, f, compress=True)
             
-            print(f'Training complete and model saved\n')
+            print(f'Training complete and model saved')
 
 
 @main_commands.command()
@@ -103,6 +101,7 @@ def predict(subject, run):
     print('Epoch nb: [prediction] [truth] equal?')
     for index, prediction in enumerate(prediction):
         print(f'epoch {index}: \t[{prediction}] \t[{y_test[index]}] \t{prediction == y_test[index]}')
+        sleep(0.1)
     print(f'Accuracy: {np.mean(prediction == y_test)}')
 
 

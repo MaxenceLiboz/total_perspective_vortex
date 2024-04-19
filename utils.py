@@ -1,19 +1,10 @@
 #! .venv/bin/python3
 
-import click
 import matplotlib.pyplot as plt
-import numpy as np
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import ShuffleSplit, cross_val_score, KFold
-from sklearn.pipeline import Pipeline, make_pipeline
-from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import LogisticRegression
 
 from mne import Epochs, events_from_annotations, pick_types
 from mne.channels import make_standard_montage
 from mne.datasets import eegbci
-from mne.decoding import CSP
 from mne.io import concatenate_raws, read_raw_edf, Raw
 
 # from my_csp import CSP
